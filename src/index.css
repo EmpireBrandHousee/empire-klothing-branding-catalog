@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #D4AF37;
+  --gold-light: #F0D060;
+  --gold-dark: #A8870A;
+  --black: #0B0B0B;
+  --black-soft: #111111;
+  --black-card: #161616;
+  --black-border: #222222;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0B0B0B;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Gold gradient text */
+.gold-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #A8870A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-text-solid {
+  color: #D4AF37;
+}
+
+/* Gold border */
+.gold-border {
+  border-color: #D4AF37;
+}
+
+/* Gold gradient bg */
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #A8870A 100%);
+}
+
+/* Particle canvas */
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Scroll animation - smooth cinematic */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Loading screen - simplified */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #0B0B0B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+/* Shimmer - simplified */
+.shimmer {
+  background: linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold line divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+/* Card hover - elegant */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+}
+
+/* Gallery item - smooth */
+.gallery-item {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item .overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Floating WhatsApp - simplified */
+.whatsapp-float {
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px);
+}
+
+/* Loader ring */
+@keyframes spin-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-ring {
+  animation: spin-ring 1.2s linear infinite;
+}
+
+/* Testimonial card - smooth */
+.testimonial-card {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Package card - subtle shine */
+.package-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.06), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.package-card:hover::before {
+  left: 120%;
+}
+
+/* Nav scroll effect */
+.nav-scrolled {
+  background: rgba(11, 11, 11, 0.98) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Pulse dot - subtle */
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(212,175,55,0); }
+}
+
+.pulse-gold {
+  animation: pulse-gold 3s ease-in-out infinite;
+}
+
+/* Hero title - subtle glow */
+@keyframes text-glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(212,175,55,0.2); }
+  50% { text-shadow: 0 0 30px rgba(212,175,55,0.35); }
+}
+
+.hero-title {
+  animation: text-glow 5s ease-in-out infinite;
+}
+
+/* Scroll indicator - smooth */
+@keyframes bounce-scroll {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 0.3; }
+}
+
+.scroll-indicator {
+  animation: bounce-scroll 2.5s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F0D060;
+}
+
+/* Slider track - smooth */
+.testimonial-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* Video overlay */
+.video-overlay {
+  background: linear-gradient(180deg, rgba(11,11,11,0) 0%, rgba(11,11,11,0.8) 100%);
+}
+
+/* Glowing border - subtle */
+.glow-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+/* Staggered delay utilities */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+/* Gold gradient button - premium */
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #A8870A 100%);
+  color: #0B0B0B;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #F0D060 0%, #D4AF37 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-gold:hover::after {
+  opacity: 1;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 5px 25px rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-gold span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Outline gold button - premium */
+.btn-outline-gold {
+  border: 1px solid #D4AF37;
+  color: #D4AF37;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  transform: translateY(-1px);
+}
