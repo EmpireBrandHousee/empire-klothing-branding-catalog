@@ -39,14 +39,14 @@ const services = [
     icon: <School size={28} />,
     title: 'Premium Souvenir Packages',
     desc: 'Elegant Gift Packs for Weddings, Conferences, Churches, Schools & Corporate Events',
-    img: '/image copy copy.png',
+    img: '/Premium Souvenir Packages/image copy.png',
     enquiryLink: WHATSAPP,
   },
   {
     icon: <Briefcase size={28} />,
     title: 'Corporate Branding',
     desc: 'Premium Branding Solutions for Businesses, Conferences & Professional Identity',
-    img: '/Corporate Branding/image.png',
+    img: '/Corporate Branding/image copy.png',
     enquiryLink: WHATSAPP,
   },
   {
@@ -144,7 +144,7 @@ const services = [
     icon: <Droplets size={28} />,
     title: 'Custom Wristbands',
     desc: 'Stylish Event Wristbands for Access Control, Campaigns & Brand Awareness',
-    img: '/Custom Wristbands/image.png',
+    img: '/Custom Wristbands/image copy.png',
     enquiryLink: WHATSAPP,
   },
   {
@@ -186,7 +186,7 @@ const services = [
     icon: <Key size={28} />,
     title: 'Branded Keyholders',
     desc: 'Personalized branded keyholders for souvenirs and corporate gifts.',
-    img: '/image copy copy.png',
+    img: '/Branded Keyholders/image copy.png',
     enquiryLink: WHATSAPP,
   },
   {
